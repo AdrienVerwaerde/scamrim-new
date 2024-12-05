@@ -125,8 +125,11 @@ const RandomCardManager = () => {
                     p: 1,
                     fontFamily: 'Centaur, serif',
                     fontWeight: 'bold',
-                    textShadow: '2px 1px 2px rgba(0, 0, 0, 1)',
+                    textShadow: "2px 1px 1px rgba(0, 0, 0, 1), 2px 1px 1px rgba(0, 0, 0, 1), -2px 1px 1px rgba(0, 0, 0, 1), -2px -1px 1px rgba(0, 0, 0, 1), 2px 1px 1px rgba(0, 0, 0, 1), 2px 1px 1px rgba(0, 0, 0, 1), -2px 1px 1px rgba(0, 0, 0, 1), -2px -1px 1px rgba(0, 0, 0, 1)",
                     textAlign: 'center',
+                    borderRadius: "12px",
+                    width: "345px",
+                    mb: 1,
                     letterSpacing: '0.1em',
                 }}
             >
@@ -169,7 +172,6 @@ const RandomCardManager = () => {
                                     component="img"
                                     height="340"
                                     image={randomCard.picture}
-                                    alt={`${randomCard.firstname} ${randomCard.lastname}`}
                                     sx={{ backgroundColor: "#F5F5F5", }}
                                 />
                                 <CardContent
@@ -181,13 +183,13 @@ const RandomCardManager = () => {
                                         p: 2,
                                     }}
                                 >
-                                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
                                         <Typography component="span" color="#F5F5F5">
-                                            <Typography sx={{ color: "#F5F5F5", fontWeight: 'bold', backgroundColor: "#4EBBFF", borderRadius: "12px", p: 1, display: "inline-block" }}>{randomCard.bonus}
+                                            <Typography sx={{ color: "#F5F5F5", fontWeight: 'bold', backgroundColor: "#4EBBFF", borderRadius: "12px", p: 1, display: "inline-block", width: "315px"}}>{randomCard.bonus}
                                             </Typography>
                                         </Typography>
                                         <Typography component="span" color="#F5F5F5">
-                                            <Typography sx={{ color: "#F5F5F5", fontWeight: 'bold', backgroundColor: "#930000", borderRadius: "12px", p: 1, display: "inline-block" }}>
+                                            <Typography sx={{ color: "#F5F5F5", fontWeight: 'bold', backgroundColor: "#930000", borderRadius: "12px", p: 1, display: "inline-block", width: "315px" }}>
                                                 {randomCard.malus}
                                             </Typography>
                                         </Typography>
@@ -206,13 +208,13 @@ const RandomCardManager = () => {
                         padding: 1,
                         borderRadius: '12px',
                         width: 'fit-content',
-                        backgroundColor: timerRunning ? "#930000" : "#4EBBFF",
+                        backgroundColor: timerRunning ? "red" : "green",
                         color: '#FFF',
                         fontWeight: 'bold',
                         fontSize: '1rem',
                         height: '50px',
                         width: '345px',
-                        mt: "2em"
+                        mt: "1em"
                     }}
                 >
                     {timerRunning ? `Time left - ${timeLeft}s` : 'Click to start timer'}
