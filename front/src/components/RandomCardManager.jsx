@@ -214,7 +214,7 @@ const RandomCardManager = () => {
                 </Box>
             ) : null}
             {randomCard ? (
-                <Box sx={{display: "flex", flexDirection: "column", alignItems: "center",  gap:1, mt: 1}}>
+                <Box sx={{display: "flex", flexDirection: "column", alignItems: "center",  gap: 1, mt: 1}}>
                 <Button
                     onClick={toggleTimer}
                     sx={{
@@ -227,6 +227,7 @@ const RandomCardManager = () => {
                         fontWeight: 'bold',
                         fontSize: '1rem',
                         height: '40px',
+                        width: '345px',
                     }}
                 >
                     {timerRunning ? `Time left - ${timeLeft}s` : 'Click to start timer'}
@@ -240,7 +241,7 @@ const RandomCardManager = () => {
                             fontWeight: 'bold',
                             height: '40px',
                             borderRadius: '12px',
-                        
+                            width: '345px',
                         }}
                     >
                         Get another character
