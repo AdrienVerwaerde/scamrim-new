@@ -122,7 +122,7 @@ const RandomCardManager = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
-                height: '100vh',
+                height: '100dvh',
                 backgroundImage: 'url(https://i.postimg.cc/1tVF7VMx/Fichier-1-4.png)',
                 backgroundRepeat: 'repeat',
                 backgroundSize: '107px',
