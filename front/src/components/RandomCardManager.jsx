@@ -135,7 +135,7 @@ const RandomCardManager = () => {
                 component="div"
                 sx={{
                     color: '#F5F5F5',
-                    p: 1,
+                    pb: 1,
                     fontFamily: 'Centaur, serif',
                     fontWeight: 'bold',
                     textShadow: "2px 1px 1px rgba(0, 0, 0, 1), 2px 1px 1px rgba(0, 0, 0, 1), -2px 1px 1px rgba(0, 0, 0, 1), -2px -1px 1px rgba(0, 0, 0, 1), 2px 1px 1px rgba(0, 0, 0, 1), 2px 1px 1px rgba(0, 0, 0, 1), -2px 1px 1px rgba(0, 0, 0, 1), -2px -1px 1px rgba(0, 0, 0, 1)",
@@ -214,6 +214,7 @@ const RandomCardManager = () => {
                 </Box>
             ) : null}
             {randomCard ? (
+                <Box sx={{display: "flex", flexDirection: "column", alignItems: "center",  gap:1, mt: 1}}>
                 <Button
                     onClick={toggleTimer}
                     sx={{
@@ -225,13 +226,26 @@ const RandomCardManager = () => {
                         color: '#FFF',
                         fontWeight: 'bold',
                         fontSize: '1rem',
-                        height: '50px',
-                        width: '345px',
-                        mt: "1em"
+                        height: '40px',
                     }}
                 >
                     {timerRunning ? `Time left - ${timeLeft}s` : 'Click to start timer'}
-                </Button>) : (
+                </Button>{randomCard && (
+                    <Button
+                        variant="contained"
+                        onClick={reshuffleAndFetchCard}
+                        sx={{
+                            backgroundColor: '#856A61',
+                            color: '#F5F5F5',
+                            fontWeight: 'bold',
+                            height: '40px',
+                            borderRadius: '12px',
+                        
+                        }}
+                    >
+                        Get another character
+                    </Button>
+                )}</Box>) : (
                 <Button
                     variant="contained"
                     onClick={shuffleAndFetchCard}
@@ -246,22 +260,6 @@ const RandomCardManager = () => {
                 >
                     Get Character !
                 </Button>)}
-                {randomCard && (
-                    <Button
-                        variant="contained"
-                        onClick={reshuffleAndFetchCard}
-                        sx={{
-                            marginTop: "2em",
-                            backgroundColor: '#856A61',
-                            color: '#F5F5F5',
-                            fontWeight: 'bold',
-                            height: '50px',
-                            boxShadow: "-4px 3px 1px rgba(78, 187, 255, 1), -4px -1px 1px rgba(78, 187, 255, 1), 3px 3px 1px rgba(78, 187, 255, 1), -2px -4px 1px rgba(78, 187, 255, 1), 3px -4px 1px rgba(78, 187, 255, 1)",
-                        }}
-                    >
-                        Get another character
-                    </Button>
-                )}
 
             {/* CSS Keyframes */}
             <style>
