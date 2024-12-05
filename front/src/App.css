@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'Centaur';
+  src: url('../public/fonts/CentaurMTStd.ttf') format('truetype'); /* Ajustez le chemin et le format */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 2em;
+  height: 80px;
+  padding: 0 2em 0 2em;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 4px 4px 8px rgba(182, 182, 182, 0.1);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(71, 154, 255);
+  border-radius: 6px;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  background-color: rgb(37, 90, 154);
+}
+
+.links-container {
+  display: flex;
+  gap: 0.5em;
+}
+
+.logout-link {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(198, 26, 26);
+  border-radius: 6px;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-link:hover {
+  background-color: rgb(241, 0, 0);
+}
+
+.nav-title {
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.hamburger-btn {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 720px) {
+  .nav-title {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  .nav-container {
+    position: absolute;
+    top: 0px;
+  }
+  a {
+    width: 100%;
+  }
+  .links-container {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .links-container.open {
+    display: flex;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    padding: 1rem;
+    width: 175px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 8px rgba(182, 182, 182, 0.3);
+  }
+  .hamburger-btn {
+    display: block;
+  }
+}
