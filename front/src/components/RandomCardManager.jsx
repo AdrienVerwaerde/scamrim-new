@@ -100,6 +100,19 @@ const RandomCardManager = () => {
         }, 2000);
     };
 
+    const reshuffleAndFetchCard = () => {
+        // Mélanger les cartes restantes et tirer immédiatement
+        const availableCards = cards.filter((card) => !drawnCards.includes(card));
+        if (availableCards.length === 0) {
+            alert('Toutes les cartes ont été tirées !');
+            return;
+        }
+
+        const shuffledCards = [...availableCards].sort(() => Math.random() - 0.5); // Mélanger
+        const newCard = shuffledCards[0]; // Prendre la première carte après mélange
+        setRandomCard(newCard);
+        setDrawnCards((prevDrawnCards) => [...prevDrawnCards, newCard]); // Ajouter à la liste des tirées
+    };
     
 
     return (
@@ -112,7 +125,7 @@ const RandomCardManager = () => {
                 height: '100vh',
                 backgroundImage: 'url(https://i.postimg.cc/1tVF7VMx/Fichier-1-4.png)',
                 backgroundRepeat: 'repeat',
-                backgroundSize: '210px',
+                backgroundSize: '107px',
                 backgroundColor: '#2A0800',
             }}
         >
@@ -233,6 +246,22 @@ const RandomCardManager = () => {
                 >
                     Get Character !
                 </Button>)}
+                {randomCard && (
+                    <Button
+                        variant="contained"
+                        onClick={reshuffleAndFetchCard}
+                        sx={{
+                            marginTop: "2em",
+                            backgroundColor: '#856A61',
+                            color: '#F5F5F5',
+                            fontWeight: 'bold',
+                            height: '50px',
+                            boxShadow: "-4px 3px 1px rgba(78, 187, 255, 1), -4px -1px 1px rgba(78, 187, 255, 1), 3px 3px 1px rgba(78, 187, 255, 1), -2px -4px 1px rgba(78, 187, 255, 1), 3px -4px 1px rgba(78, 187, 255, 1)",
+                        }}
+                    >
+                        Get another character
+                    </Button>
+                )}
 
             {/* CSS Keyframes */}
             <style>
